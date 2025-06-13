@@ -24,7 +24,7 @@ const [timeLeft, setTimeLeft] = useState(getTimeRemaining(targetDate));
   }, [targetDate]);
 
   return (
-    <section id="event" className="text-center bg-[#212529] text-zinc-300">
+    <section id="event" className="text-center font-parisienne bg-[#212529] text-zinc-300">
       <div className="mt-4 text-center">
         <h2 className="text-lg font-bold">Menuju Hari Bahagia:</h2>
         <div className="flex justify-center gap-4 mt-2 text-sm">

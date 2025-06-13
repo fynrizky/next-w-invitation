@@ -5,7 +5,7 @@ export default function HomeSection() {
 
   return (
     <section id="home"
-      className="text-center text-zinc-300">
+      className="text-center font-parisienne text-zinc-300">
       <div className="lg:block md:block 
         lg:bg-contain md:bg-cover bg-cover bg-center md:bg-[center] lg:bg-[150%] bg-fixed z-0" 
         style={{backgroundImage: "url('assets/bgold.jpg')"}}>

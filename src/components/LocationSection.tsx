@@ -1,7 +1,7 @@
 // pages/LocationSection.tsx
 export default function LocationSection() {
   return (
-    <section id="location" className="text-center text-zinc-800 bg-white">
+    <section id="location" className="text-center font-parisienne text-zinc-800 bg-white">
       <div className="p-6">
 
         <h2 className="text-lg font-bold mb-2">Lokasi</h2>

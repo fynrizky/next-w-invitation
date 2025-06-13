@@ -35,8 +35,8 @@ export default function Home() {
         <div className="w-full h-full bg-black/70 absolute top-0 left-0 z-0" />
 
         {/* Konten di atas background */}
-        <div className="relative z-10 text-center text-zinc-300 px-6">
-          <h2 className="text-4xl font-bold mb-2">Fulan & Pasangan</h2>
+        <div className="relative z-10 text-center font-parisienne text-zinc-300 px-6">
+          <h2 className=" text-4xl font-bold mb-2">Fulan & Pasangan</h2>
           <p className="text-lg mb-4">Rabu, 20 Desember 2025</p>
 
           <a

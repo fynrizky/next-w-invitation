@@ -2,7 +2,7 @@
 // pages/PrayerSection.tsx
 export default function PrayerSection() {
   return (
-    <section id="prayer" className=" pt-[10px] text-center text-zinc-300 bg-black">
+    <section id="prayer" className=" pt-[10px] text-center font-parisienne text-zinc-300 bg-black">
       <div className="p-6">
         <h2 className="text-lg font-bold">Doa</h2>
         <p className="mt-4">
