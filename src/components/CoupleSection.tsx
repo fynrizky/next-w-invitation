@@ -1,3 +1,4 @@
+'use client';
 // pages/CoupleSection.tsx
 export default function CoupleSection() {
   return (
@@ -9,14 +10,14 @@ export default function CoupleSection() {
         <img
           src="assets/bgsleep.jpg"
           alt="Undangan Pernikahan"
-          className="w-50 h-50 mx-auto my-6 rounded-full object-cover"
+          className="w-[200px] h-[200px] mx-auto my-6 rounded-full object-cover"
         />
         <h3 className="mt-6 text-[18px] font-bold">Fulan</h3>
         <p className="text-xs">Putra dari Bapak Nama Ayah Pria dan Ibu Nama Ibu Pria</p>
         <img
           src="assets/bgnew.jpg"
           alt="Undangan Pernikahan"
-          className="w-50 h-50 mx-auto my-6 rounded-full object-cover"
+          className="w-[200px] h-[200px] mx-auto my-6 rounded-full object-cover"
         />
         <h3 className="text-[18px] font-bold mt-4">Nama Mempelai Wanita</h3>
         <p className="text-xs">Putri dari Bapak Nama Ayah Wanita dan Ibu Nama Ibu Wanita</p>

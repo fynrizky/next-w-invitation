@@ -1,3 +1,4 @@
+'use client';
 // pages/LocationSection.tsx
 export default function LocationSection() {
   return (

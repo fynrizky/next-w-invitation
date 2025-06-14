@@ -3,11 +3,15 @@ import type { Config } from 'tailwindcss'
 
 const config: Config = {
   content: [
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/pages/**/*.{ts,tsx}', 
+    './src/components/**/*.{ts,tsx}'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        parisienne: ['Parisienne', 'cursive'],
+    },
+  },
   },
   plugins: [],
 }

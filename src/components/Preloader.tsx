@@ -1,3 +1,4 @@
+'use client';
 export default function Preloader() {
   return (
     <div className="h-screen w-full flex items-center justify-center font-parisienne bg-black text-white">

@@ -1,5 +1,5 @@
 // pages/HomeSection.tsx
-"use client";
+'use client';
 
 export default function HomeSection() {
 
@@ -9,12 +9,12 @@ export default function HomeSection() {
       <div className="lg:block md:block 
         lg:bg-contain md:bg-cover bg-cover bg-center md:bg-[center] lg:bg-[150%] bg-fixed z-0" 
         style={{backgroundImage: "url('assets/bgold.jpg')"}}>
-      <div className="backdrop-blur-xs bg-black/70" style={{
+      <div className="backdrop-blur-[2px] bg-black/70" style={{
         background: "linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.95))"
       }}>
 
       <h1 className="text-2xl pt-6 font-bold">Undangan Pernikahan</h1>
-      <div className="relative w-[200px] h-[200px] mx-auto my-6 rounded-full overflow-hidden">
+      <div className="relative w-[200px] h-[200px] border-2 border-gray-300 mx-auto my-6 rounded-full overflow-hidden">
         <img
           src="assets/bgold.jpg"
           alt="Undangan Pernikahan"

@@ -1,4 +1,4 @@
-
+'use client';
 // pages/PrayerSection.tsx
 export default function PrayerSection() {
   return (

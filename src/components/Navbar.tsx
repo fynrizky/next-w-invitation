@@ -1,3 +1,4 @@
+'use client';
 // components/Navbar.tsx
 import { Home, Heart, Calendar, MapPin, BookOpen } from "lucide-react";
 
