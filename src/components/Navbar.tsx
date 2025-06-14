@@ -13,12 +13,12 @@ const menuItems = [
 export default function Navbar() {
   return (
     <div className="fixed bottom-0 w-full lg:w-1/3 md:right-0 md:rounded-tl-2xl z-50">
-      <nav className="rounded-t-lg w-full bg-black/90 border-t-1 shadow flex justify-around py-2 text-gray-700">
+      <nav className="rounded-t-lg w-full bg-black/90 border-t-1 shadow flex justify-around py-1 text-gray-700">
         {menuItems.map((item) => (
           <a
             key={item.label}
             href={item.href}
-            className="flex flex-col items-center text-xs hover:text-gray-500"
+            className="flex flex-col items-center p-1 text-xs hover:text-gray-500"
           >
             {item.icon}
             {item.label}

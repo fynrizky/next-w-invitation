@@ -25,36 +25,38 @@ const [timeLeft, setTimeLeft] = useState(getTimeRemaining(targetDate));
 
   return (
     <section id="event" className="text-center font-parisienne bg-[#212529] text-zinc-300">
-      <div className="mt-4 text-center">
-        <h2 className="text-lg font-bold">Menuju Hari Bahagia:</h2>
-        <div className="flex justify-center gap-4 mt-2 text-sm">
-          <div className="text-center">
-            <p className="font-bold text-lg">{timeLeft.days}</p>
-            <p>Hari</p>
-          </div>
-          <div className="text-center">
-            <p className="font-bold text-lg">{timeLeft.hours}</p>
-            <p>Jam</p>
-          </div>
-          <div className="text-center">
-            <p className="font-bold text-lg">{timeLeft.minutes}</p>
-            <p>Menit</p>
-          </div>
-          <div className="text-center">
-            <p className="font-bold text-lg">{timeLeft.seconds}</p>
-            <p>Detik</p>
+      <div className="p-6 lg:p-12 md:p-8">
+        <div className="mt-4 text-center">
+          <h2 className="text-lg font-bold">Menuju Hari Bahagia:</h2>
+          <div className="flex justify-center gap-4 mt-2 text-sm">
+            <div className="text-center">
+              <p className="font-bold text-lg">{timeLeft.days}</p>
+              <p>Hari</p>
+            </div>
+            <div className="text-center">
+              <p className="font-bold text-lg">{timeLeft.hours}</p>
+              <p>Jam</p>
+            </div>
+            <div className="text-center">
+              <p className="font-bold text-lg">{timeLeft.minutes}</p>
+              <p>Menit</p>
+            </div>
+            <div className="text-center">
+              <p className="font-bold text-lg">{timeLeft.seconds}</p>
+              <p>Detik</p>
+            </div>
           </div>
         </div>
-      </div>
-      <h2 className="text-lg font-bold mt-6">Acara Pernikahan</h2>
-      <p className="text-sm mt-2"> 
-        Kami mengundang Anda untuk hadir di acara pernikahan kami yang akan dilaksanakan pada:
-      </p>
-      <div className="mt-4">
-        <h3 className="text-lg font-bold">Sabtu, 20 Desember 2025</h3>
-        <p className="text-sm">Pukul 08.00 WIB</p>  
-        <p className="text-sm">Gedung Serbaguna ABC</p>
-        <p className="text-sm">Jl. Contoh No. 123, Jakarta</p>
+        <h2 className="text-lg font-bold mt-6">Acara Pernikahan</h2>
+        <p className="text-sm mt-2"> 
+          Kami mengundang Anda untuk hadir di acara pernikahan kami yang akan dilaksanakan pada:
+        </p>
+        <div className="mt-4">
+          <h3 className="text-lg font-bold">Sabtu, 20 Desember 2025</h3>
+          <p className="text-sm">Pukul 08.00 WIB</p>  
+          <p className="text-sm">Gedung Serbaguna ABC</p>
+          <p className="text-sm">Jl. Contoh No. 123, Jakarta</p>
+        </div>
       </div>
   
       <svg
