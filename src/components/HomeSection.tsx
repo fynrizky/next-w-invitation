@@ -23,21 +23,23 @@ export default function HomeSection() {
             />
           <div className="absolute inset-0 rounded-full bg-black/20" />
         </div>
-        <h1 className="mt-6 text-2xl font-bold">Fulan <br />& <br />Pasangan</h1>
-        <a
-          href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fulan+%26+Pasangan+Wedding&dates=20251220T020000Z/20251220T040000Z&details=Undangan+pernikahan+Fulan+%26+Pasangan&location=Gedung+Pernikahan+XYZ"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 mt-2 text-sm text-gray-500 hover:text-gray-300 border border-gray-800 rounded-md hover:bg-gray-800 transition"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7H3v12a2 2 0 002 2z" />
-          </svg>
-          Save Google Calendar
-        </a>
+        <h1 className="my-6 text-2xl font-bold">Fulan <br />& <br />Pasangan</h1>
+        <div className="-mt-4">
+          <a
+            href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fulan+%26+Pasangan+Wedding&dates=20251220T020000Z/20251220T040000Z&details=Undangan+pernikahan+Fulan+%26+Pasangan&location=Gedung+Pernikahan+XYZ"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-500 hover:text-gray-300 border border-gray-800 rounded-md hover:bg-gray-800 transition"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7H3v12a2 2 0 002 2z" />
+            </svg>
+            Save Google Calendar
+          </a>
+        </div>
       </div>
       
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center mt-12 md:mt-4 lg:mt-0 items-center">
       {/* Scroll icon di atas */}
       <div className="flex flex-col  items-center">
         <svg
@@ -64,7 +66,7 @@ export default function HomeSection() {
             className="animate-bounce"
           />
         </svg>
-        <p className="mt-2 text-grey-400 text-sm">Scroll Down</p>
+        <p className="mt-4 text-grey-400 text-sm">Scroll Down</p>
       </div>
 
       </div>
