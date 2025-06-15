@@ -2,12 +2,12 @@
 // pages/LocationSection.tsx
 export default function LocationSection() {
   return (
-    <section id="location" className="text-center font-parisienne text-zinc-800">
+    <section id="location" className="text-center font-parisienne bg-[white] text-zinc-800">
       <div className="bg-black/10">
 
       <div className="px-4 py-4 lg:py-8 md:py-2">
 
-          <h2 className="text-lg font-bold mb-2">Lokasi</h2>
+          <h2 className="text-lg font-bold mb-4">Lokasi</h2>
           <p className="mb-4">Berikut adalah lokasi acara:</p>
 
           {/* Google Maps Embed */}
