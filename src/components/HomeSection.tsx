@@ -13,7 +13,7 @@ export default function HomeSection() {
           background: "linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.95))"
         }}>
 
-      <div className="p-6 lg:p-6 md:p-8">
+      <div className="px-4 py-12 lg:py-8 md:py-8">
         <h1 className="text-2xl font-bold">Undangan Pernikahan</h1>
         <div className="relative w-[170px] h-[170px] border-2 border-gray-300 mx-auto my-6 rounded-full overflow-hidden">
           <img
@@ -39,7 +39,7 @@ export default function HomeSection() {
         </div>
       </div>
       
-      <div className="flex justify-center mt-12 md:mt-4 lg:mt-0 items-center">
+      <div className="flex justify-center mt-12 md:mt-4 lg:-mt-4 items-center">
       {/* Scroll icon di atas */}
       <div className="flex flex-col  items-center">
         <svg

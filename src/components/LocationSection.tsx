@@ -3,7 +3,7 @@
 export default function LocationSection() {
   return (
     <section id="location" className="text-center font-parisienne text-zinc-800 bg-white">
-      <div className="p-6">
+      <div className="px-4 py-4 lg:py-2 md:py-2">
 
         <h2 className="text-lg font-bold mb-2">Lokasi</h2>
         <p className="mb-4">Berikut adalah lokasi acara:</p>
