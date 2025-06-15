@@ -7,7 +7,7 @@ export default function HomeSection() {
     <section id="home"
       className="text-center font-parisienne text-zinc-300">
         <div className="lg:block md:block 
-          lg:bg-contain md:bg-cover bg-cover bg-center md:bg-[center] lg:bg-[150%] bg-fixed z-0" 
+          lg:bg-contain md:bg-cover bg-cover bg-center md:bg-[center] lg:bg-[150%] lg:bg-fixed bg-scroll z-0" 
           style={{backgroundImage: "url('assets/bgold.jpg')"}}>
         <div className="backdrop-blur-[1.5px] bg-black/70" style={{
           background: "linear-gradient(to bottom, rgba(255,255,255,0.1), rgba(0,0,0,0.95))"
@@ -37,7 +37,7 @@ export default function HomeSection() {
         </a>
       </div>
       
-      <div className="my-0 flex justify-center items-center">
+      <div className="flex justify-center items-center">
       {/* Scroll icon di atas */}
       <div className="flex flex-col  items-center">
         <svg
