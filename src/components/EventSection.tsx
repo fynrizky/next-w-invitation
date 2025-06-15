@@ -26,7 +26,7 @@ const [timeLeft, setTimeLeft] = useState(getTimeRemaining(targetDate));
   return (
     <section id="event" className="text-center font-parisienne bg-[#212529] text-zinc-300">
       <div className="px-4 py-4 lg:py-2 md:py-2">
-        <div className="mt-4 text-center">
+        <div className="mt-6 text-center">
           <h2 className="text-lg font-bold">Menuju Hari Bahagia:</h2>
           <div className="flex justify-center gap-4 mt-2 text-sm">
             <div className="text-center">
@@ -60,12 +60,12 @@ const [timeLeft, setTimeLeft] = useState(getTimeRemaining(targetDate));
       </div>
   
       <svg
-        className="w-full mt-6 -mb-1"
+        className="w-full mt-6"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1440 320"
         >
         <path
-          fill="#ffffff"
+          fill="#e5e5e5"
           fillOpacity="1"
           d="M0,224L48,208C96,192,192,160,288,165.3C384,171,480,213,576,208C672,203,768,149,864,154.7C960,160,1056,224,1152,234.7C1248,245,1344,203,1392,181.3L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
         ></path>
