@@ -7,7 +7,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Next-W-Invitation. All rights reserved.
           </p>
           <p className="text-xs mt-2">
-            Designed with ❤️ by <a href="https://github.com/omar-rahmat" className="text-zinc-500 font-bahasaFont text-[22px] font-bold">Fynrizky</a>
+            Designed with ❤️ by <a href="https://www.instagram.com/_fynrizky/" className="text-zinc-500 font-bahasaFont text-[22px] font-bold">Fynrizky</a>
           </p>
         </div>
       </footer>
