@@ -5,7 +5,7 @@ export default function LocationSection() {
     <section id="location" className="text-center font-bahasaFont bg-[white] text-zinc-800">
       <div className="bg-black/10">
 
-      <div className="px-4 py-4 lg:py-12 md:py-2">
+      <div className="px-4 py-12 lg:py-12 md:py-8">
 
           <h2 className="text-lg text-[22px] font-bold">Lokasi</h2>
           <p className="my-4">Berikut adalah lokasi acara:</p>

@@ -3,7 +3,7 @@
 export default function CoupleSection() {
   return (
     <section id="couple" className="font-bahasaFont text-zinc-300 bg-black text-center">
-      <div className="px-4 py-4 lg:py-12 md:py-2">
+      <div className="px-4 py-12 lg:py-12">
         <h1 className="text-4xl font-arabicFont">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</h1>
         <h2 className="text-[22px] my-6">Assalamualaikum <br/>Warahmatullahi Wabarakatuh</h2>
         <p className="text-md">Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami:</p>

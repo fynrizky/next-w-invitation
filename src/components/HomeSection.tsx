@@ -13,7 +13,7 @@ export default function HomeSection() {
             background: "linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,0.9))"
             }}>
 
-            <div className="px-4 lg:py-4 md:py-8">
+            <div className="px-4 py-8">
               <h1 className="text-3xl font-bold">Undangan Pernikahan</h1>
               <div className="relative w-[170px] h-[170px] border-2 border-gray-300 mx-auto my-6 rounded-full overflow-hidden">
                 <img

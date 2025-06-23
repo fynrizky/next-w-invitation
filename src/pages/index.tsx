@@ -9,6 +9,7 @@ import CoupleSection from "@/components/CoupleSection";
 import EventSection from "@/components/EventSection";
 import LocationSection from "@/components/LocationSection";
 import PrayerSection from "@/components/PrayerSection";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -63,6 +64,7 @@ export default function Home() {
           <EventSection />
           <LocationSection />
           <PrayerSection />
+          <Footer />
         </div>
       </div>
     </main>
