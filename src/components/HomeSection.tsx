@@ -1,31 +1,14 @@
 // pages/HomeSection.tsx
 'use client';
-import { useEffect, useRef, useState } from "react";
-
 
 export default function HomeSection() {
-  const bgRef = useRef<HTMLDivElement>(null);
-  const [offsetY, setOffsetY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (bgRef.current) {
-        const scrollTop = window.scrollY;
-        setOffsetY(scrollTop * 0.9); // ubah kecepatan parallax di sini
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
 
   return (
     <section id="home"
-      className="text-center font-bahasaFont text-zinc-300  overflow-hidden">
-        <div ref={bgRef} className="lg:block md:block 
-          md:bg-cover bg-cover bg-center md:bg-center bg-no-repeat lg:bg-center lg:bg-cover bg-scroll" 
-          style={{backgroundImage: "url('assets/bgold.jpg')", transform: `translateY(${offsetY}px)`}}>
+      className="text-center font-bahasaFont text-zinc-300">
+        <div className="lg:block md:block 
+          lg:bg-contain md:bg-cover bg-cover bg-center md:bg-center bg-no-repeat lg:bg-center lg:bg-cover bg-scroll z-0" 
+          style={{backgroundImage: "url('assets/bgold.jpg')"}}>
           <div className="backdrop-blur-[2px]" style={{
             background: "linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,0.9))"
             }}>
