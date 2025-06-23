@@ -2,7 +2,6 @@
 'use client';
 
 export default function HomeSection() {
-
   return (
     <section id="home"
       className="text-center font-bahasaFont text-zinc-300">

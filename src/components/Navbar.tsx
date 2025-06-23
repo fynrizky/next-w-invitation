@@ -12,7 +12,6 @@ const menuItems = [
 
 export default function Navbar() {
   const [activeId, setActiveId] = useState("home");
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
