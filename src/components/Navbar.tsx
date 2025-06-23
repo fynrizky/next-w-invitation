@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from "react";
-import { Home, Heart, Calendar, MapPin, BookOpen } from "lucide-react";
+import { Home, Heart, Calendar, MapPin, BookOpen, HomeIcon } from "lucide-react";
 
 const menuItems = [
   { label: "Home", icon: <Home size={20} />, href: "#home", id: "home" },
@@ -37,14 +37,14 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="fixed bottom-0 w-full lg:w-1/4 md:right-0 md:rounded-tl-2xl z-50">
-      <nav className="rounded-t-lg w-full bg-black/90 border-t-1 shadow flex justify-around py-1 text-gray-700">
+    <div className="fixed bottom-0 w-full font-bahasaFont lg:w-1/4 md:w-1/2 z-10">
+      <nav className="rounded-t-xl w-full bg-black/90 flex  justify-around py-1 text-gray-700">
         {menuItems.map((item) => (
           <a
             key={item.label}
             href={item.href}
             onClick={() => setActiveId(item.id)} 
-            className={`flex flex-col items-center p-1 text-xs transition ${
+            className={`flex flex-col items-center mt-1.5 text-[12px] transition ${
               activeId === item.id ? "text-white" : "text-gray-400"
             }`}
           >
