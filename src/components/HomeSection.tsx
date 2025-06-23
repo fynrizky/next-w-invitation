@@ -13,7 +13,7 @@ export default function HomeSection() {
             background: "linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,0.9))"
             }}>
 
-            <div className="px-4 py-8">
+            <div className="px-4 py-4">
               <h1 className="text-3xl font-bold">Undangan Pernikahan</h1>
               <div className="relative w-[170px] h-[170px] border-2 border-gray-300 mx-auto my-6 rounded-full overflow-hidden">
                 <img
@@ -43,9 +43,9 @@ export default function HomeSection() {
               {/* Scroll icon di atas */}
               <div className="flex flex-col  items-center">
                   <svg
-                    width="24"
-                    height="30"
-                    viewBox="0 0 24 40"
+                    width="25"
+                    height="40"
+                    viewBox="0 0 25 40"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -54,17 +54,19 @@ export default function HomeSection() {
                       y="1"
                       width="22"
                       height="38"
-                      rx="11"
+                      rx="12"
                       stroke="grey"
                       strokeWidth="1.5"
                     />
-                    <circle
-                      cx="12"
-                      cy="15"
-                      r="2"
-                      fill="grey"
-                      className="animate-bounce"
-                    />
+                  <ellipse
+                    cx="12"
+                    cy="8"
+                    rx="2"
+                    ry="4"
+                    fill="grey"
+                    className="animate-rise-fade"
+                  />
+
                   </svg>
                 <p className="mt-2 text-grey-400 text-sm">Scroll Down</p>
               </div>
