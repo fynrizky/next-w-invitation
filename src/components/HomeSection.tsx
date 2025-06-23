@@ -5,7 +5,7 @@ export default function HomeSection() {
 
   return (
     <section id="home"
-      className="text-center font-parisienne text-zinc-300">
+      className="text-center font-bahasaFont text-zinc-300">
         <div className="lg:block md:block 
           lg:bg-contain md:bg-cover bg-cover bg-center md:bg-[center] lg:bg-[150%] lg:bg-fixed bg-scroll z-0" 
           style={{backgroundImage: "url('assets/bgold.jpg')"}}>
@@ -13,8 +13,8 @@ export default function HomeSection() {
             background: "linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,0.9))"
             }}>
 
-            <div className="px-4 py-12 lg:py-8 md:py-8">
-              <h1 className="text-2xl font-bold">Undangan Pernikahan</h1>
+            <div className="px-4 lg:py-4 md:py-8">
+              <h1 className="text-3xl font-bold">Undangan Pernikahan</h1>
               <div className="relative w-[170px] h-[170px] border-2 border-gray-300 mx-auto my-6 rounded-full overflow-hidden">
                 <img
                   src="assets/bgold.jpg"
@@ -23,8 +23,8 @@ export default function HomeSection() {
                   />
                 <div className="absolute inset-0 rounded-full bg-black/20" />
               </div>
-              <h1 className="my-6 text-2xl font-bold">Fulan <br />& <br />Pasangan</h1>
-              <div className="-mt-4">
+              <h1 className=" text-3xl font-bold">Fulan <br />& <br />Pasangan</h1>
+              <div className="my-4">
                 <a
                   href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fulan+%26+Pasangan+Wedding&dates=20251220T020000Z/20251220T040000Z&details=Undangan+pernikahan+Fulan+%26+Pasangan&location=Gedung+Pernikahan+XYZ"
                   target="_blank"
@@ -66,7 +66,7 @@ export default function HomeSection() {
                       className="animate-bounce"
                     />
                   </svg>
-                <p className="mt-4 text-grey-400 text-sm">Scroll Down</p>
+                <p className="mt-2 text-grey-400 text-sm">Scroll Down</p>
               </div>
             </div>
 

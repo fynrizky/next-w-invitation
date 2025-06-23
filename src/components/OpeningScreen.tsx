@@ -12,7 +12,7 @@ export default function OpeningScreen({ onOpen }: Props) {
 
   return (
     <div
-      className="relative h-screen bg-cover bg-center font-parisienne text-zinc-300 flex items-center justify-center"
+      className="relative h-screen bg-cover bg-center font-bahasaFont text-zinc-300 flex items-center justify-center"
       style={{ backgroundImage: "url('/assets/bg.jpg')" }}>
       {/* Gradasi overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-black/80 z-0" />

@@ -9,7 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        parisienne: ['Parisienne', 'cursive'],
+        bahasaFont: ['Dancing Script', 'cursive'],
+        //Dancing Script, Parisienne, Great Vibes
+        arabicFont: ['Amiri', 'serif'],
     },
   },
   },

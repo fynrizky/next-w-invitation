@@ -2,16 +2,16 @@
 // pages/LocationSection.tsx
 export default function LocationSection() {
   return (
-    <section id="location" className="text-center font-parisienne bg-[white] text-zinc-800">
+    <section id="location" className="text-center font-bahasaFont bg-[white] text-zinc-800">
       <div className="bg-black/10">
 
-      <div className="px-4 py-4 lg:py-8 md:py-2">
+      <div className="px-4 py-4 lg:py-12 md:py-2">
 
-          <h2 className="text-lg font-bold mb-4">Lokasi</h2>
-          <p className="mb-4">Berikut adalah lokasi acara:</p>
+          <h2 className="text-lg text-[22px] font-bold">Lokasi</h2>
+          <p className="my-4">Berikut adalah lokasi acara:</p>
 
           {/* Google Maps Embed */}
-          <div className="w-full max-w-2xl mx-auto aspect-video mb-6 overflow-hidden shadow-lg">
+          <div className="w-full max-w-2xl mx-auto aspect-video overflow-hidden shadow-lg">
             <iframe
               title="Lokasi Acara"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63471.58710726772!2d106.79091200000002!3d-6.134169599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ec2a940017ed%3A0xdfce12d4a0938133!2sWisata%20Kota%20Tua%20Jakarta!5e0!3m2!1sen!2sid!4v1749783079405!5m2!1sen!2sid"
@@ -26,11 +26,12 @@ export default function LocationSection() {
 
           </div>
           {/* Petunjuk atau tombol buka di Gmaps */}
+
           <a
-            href="https://www.google.com/maps/place/Gedung+Serbaguna+ABC"
+            href="https://maps.app.goo.gl/LWKwh9mPLdmuniSHA"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 text-sm"
+            className="inline-block px-4 py-2 bg-blue-600 my-4 text-white rounded hover:bg-blue-700 text-md"
             >
             Buka di Google Maps
           </a>

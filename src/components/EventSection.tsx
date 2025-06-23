@@ -24,11 +24,11 @@ const [timeLeft, setTimeLeft] = useState(getTimeRemaining(targetDate));
   }, [targetDate]);
 
   return (
-    <section id="event" className="text-center font-parisienne bg-[#212529] text-zinc-300">
-      <div className="px-4 py-4 lg:py-2 md:py-2">
-        <div className="mt-6 text-center">
-          <h2 className="text-lg font-bold">Menuju Hari Bahagia:</h2>
-          <div className="flex justify-center gap-4 mt-2 text-sm">
+    <section id="event" className="text-center font-bahasaFont bg-[#212529] text-zinc-300">
+      <div className="px-4 py-4 lg:py-12 md:py-2">
+        <div className="text-center">
+          <h2 className="text-lg text-[22px] font-bold">Menuju Hari Bahagia:</h2>
+          <div className="flex justify-center gap-4 mt-2 text-lg font-bold">
             <div className="text-center">
               <p className="font-bold text-lg">{timeLeft.days}</p>
               <p>Hari</p>
@@ -47,11 +47,11 @@ const [timeLeft, setTimeLeft] = useState(getTimeRemaining(targetDate));
             </div>
           </div>
         </div>
-        <h2 className="text-lg font-bold mt-6">Acara Pernikahan</h2>
-        <p className="text-sm mt-2"> 
+        <h2 className="text-lg text-[22px] font-bold my-6">Acara Pernikahan</h2>
+        <p className="text-md"> 
           Kami mengundang Anda untuk hadir di acara pernikahan kami yang akan dilaksanakan pada:
         </p>
-        <div className="mt-4">
+        <div className="my-4">
           <h3 className="text-lg font-bold">Sabtu, 20 Desember 2025</h3>
           <p className="text-sm">Pukul 08.00 WIB</p>  
           <p className="text-sm">Gedung Serbaguna ABC</p>

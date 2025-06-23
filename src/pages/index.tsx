@@ -35,15 +35,15 @@ export default function Home() {
         <div className="w-full h-full bg-black/70 absolute top-0 left-0 z-0" />
 
         {/* Konten di atas background */}
-        <div className="relative z-10 text-center font-parisienne text-zinc-300 px-6">
-          <h2 className=" text-4xl font-bold mb-2">Fulan & Pasangan</h2>
+        <div className="relative z-10 text-center font-bahasaFont text-zinc-300 px-6">
+          <h2 className=" text-5xl font-bold mb-2">Fulan & Pasangan</h2>
           <p className="text-lg mb-4">Rabu, 20 Desember 2025</p>
 
           <a
             href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fulan+%26+Pasangan+Wedding&dates=20251220T020000Z/20251220T040000Z&details=Undangan+pernikahan+Fulan+%26+Pasangan&location=Gedung+Pernikahan+XYZ"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2 border border-gray-800 text-gray-500 border-gray-500 hover:text-gray-300 hover:bg-gray-800 rounded-lg text-sm transition"
+            className="inline-flex items-center gap-2 px-4 py-2 border border-gray-500 text-gray-500 hover:text-gray-300 hover:bg-gray-800 rounded-lg text-sm transition"
           >
             {/* Icon kalender */}
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

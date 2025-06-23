@@ -2,13 +2,13 @@
 // pages/PrayerSection.tsx
 export default function PrayerSection() {
   return (
-    <section id="prayer" className=" pt-[10px] text-center font-parisienne text-zinc-300 bg-black">
-      <div className="px-4 py-4 lg:py-2 md:py-2">
+    <section id="prayer" className=" pt-[10px] text-center font-bahasaFont text-zinc-300 bg-black">
+      <div className="px-4 py-4 lg:py-12 md:py-2">
         <h2 className="text-lg font-bold">Doa</h2>
         <p className="mt-4">
           Kami mohon doa restu dari Bapak/Ibu/Saudara/i agar acara pernikahan kami berjalan lancar dan penuh berkah.
         </p>
-        <p className="mt-2">
+        <p className="mt-2 font-arabicFont">
           <strong>بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</strong>
         </p>
         <p className="mt-2">
@@ -32,5 +32,6 @@ export default function PrayerSection() {
       </svg>
       
     </section>
+    
   );
 }
