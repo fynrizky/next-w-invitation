@@ -3,7 +3,7 @@
 export default function PrayerSection() {
   return (
     <section id="prayer" className=" pt-[10px] text-center font-bahasaFont text-zinc-300 bg-black">
-      <div className="px-4 py-4 lg:py-12 md:py-2">
+      <div className="px-4 py-4 md:py-4">
         <h2 className="text-lg font-bold">Doa</h2>
         <p className="mt-4">
           Kami mohon doa restu dari Bapak/Ibu/Saudara/i agar acara pernikahan kami berjalan lancar dan penuh berkah.
