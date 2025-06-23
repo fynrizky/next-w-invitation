@@ -25,6 +25,12 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+
 html{
   scroll-behavior: smooth;
 }
