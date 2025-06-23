@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from "react";
-import { Home, Heart, Calendar, MapPin, BookOpen, HomeIcon } from "lucide-react";
+import { Home, Heart, Calendar, MapPin, BookOpen } from "lucide-react";
 
 const menuItems = [
   { label: "Home", icon: <Home size={20} />, href: "#home", id: "home" },
