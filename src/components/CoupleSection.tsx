@@ -1,5 +1,7 @@
 'use client';
 // pages/CoupleSection.tsx
+import Image from 'next/image';
+
 export default function CoupleSection() {
   return (
     <section id="couple" className="font-bahasaFont text-zinc-300 bg-black text-center">
@@ -8,18 +10,27 @@ export default function CoupleSection() {
         <h2 className="text-[22px] my-6">Assalamualaikum <br/>Warahmatullahi Wabarakatuh</h2>
         <p className="text-md">Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami:</p>
         <div className="mt-4">
-          <img
-            src="assets/bgsleep.jpg"
-            alt="Undangan Pernikahan"
-            className="w-[170px] h-[170px] border-2 border-gray-300 mx-auto my-6 rounded-full object-cover"
+          <div className="w-[170px] h-[170px] border-2 border-gray-300 mx-auto my-6 rounded-full overflow-hidden relative">
+            <Image
+              src="/assets/bgsleep.jpg"
+              alt="Undangan Pernikahan"
+              fill
+              className="object-cover rounded-full"
             />
+          </div>
+
           <h3 className="my-4 text-[22px] font-bold">Fulan</h3>
           <p className="text-md">Putra dari Bapak Nama Ayah Pria dan Ibu Nama Ibu Pria</p>
-          <img
-            src="assets/bgnew.jpg"
-            alt="Undangan Pernikahan"
-            className="w-[170px] h-[170px] border-2 border-gray-300 mx-auto mt-4 rounded-full object-cover"
+          
+          <div className="w-[170px] h-[170px] border-2 border-gray-300 mx-auto mt-4 rounded-full overflow-hidden relative">
+            <Image
+              src="/assets/bgnew.jpg"
+              alt="Undangan Pernikahan"
+              fill
+              className="object-cover rounded-full"
             />
+          </div>
+          
           <h3 className="text-[18px] font-bold my-4">Nama Mempelai Wanita</h3>
           <p className="text-md">Putri dari Bapak Nama Ayah Wanita dan Ibu Nama Ibu Wanita</p>
         </div>

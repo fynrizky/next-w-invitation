@@ -1,5 +1,6 @@
 // pages/HomeSection.tsx
 'use client';
+import Image from 'next/image';
 
 export default function HomeSection() {
 
@@ -16,12 +17,13 @@ export default function HomeSection() {
             <div className="px-4 lg:py-4 md:py-12 py-12">
               <h1 className="text-3xl font-bold">Undangan Pernikahan</h1>
               <div className="relative w-[170px] h-[170px] border-2 border-gray-300 mx-auto my-6 rounded-full overflow-hidden">
-                <img
-                  src="assets/bgold.jpg"
-                  alt="Undangan Pernikahan"
-                  className="w-full h-full object-cover"
+                  <Image
+                    src="/assets/bgold.jpg"
+                    alt="Undangan Pernikahan"
+                    fill
+                    className="object-cover"
                   />
-                <div className="absolute inset-0 rounded-full bg-black/20" />
+                <div className="absolute inset-0 rounded-full bg-black/40" />
               </div>
               <h1 className=" text-3xl font-bold">Fulan <br />& <br />Pasangan</h1>
               <div className="my-4">
