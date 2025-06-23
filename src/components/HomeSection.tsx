@@ -7,7 +7,7 @@ export default function HomeSection() {
     <section id="home"
       className="text-center font-bahasaFont text-zinc-300">
         <div className="lg:block md:block 
-          lg:bg-contain md:bg-cover bg-cover bg-center md:bg-center bg-no-repeat lg:bg-center lg:bg-cover bg-scroll z-0" 
+          md:bg-cover bg-cover bg-center md:bg-center bg-no-repeat lg:bg-center lg:bg-cover bg-scroll z-0" 
           style={{backgroundImage: "url('assets/bgold.jpg')"}}>
           <div className="backdrop-blur-[2px]" style={{
             background: "linear-gradient(to bottom, rgba(255,255,255,0), rgba(0,0,0,0.9))"
