@@ -1,5 +1,4 @@
 'use client';
-import { useRef } from "react";
 import { weddingData } from "@/data/weddingData";
 
 type Props = {
@@ -7,7 +6,6 @@ type Props = {
 };
 
 export default function OpeningScreen({ onOpen }: Props) {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
     const handleClick = () => {
     const audio = new Audio('/music/liesandtruth.mp3'); // file di public/
