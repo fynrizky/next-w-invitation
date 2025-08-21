@@ -11,7 +11,7 @@ export default function OpeningScreen({ onOpen }: Props) {
     const audio = new Audio('/music/liesandtruth.mp3'); // file di public/
     audio.loop = true;                     // biar muter terus
     audio.play();                          // mulai musik
-    ;(window as any).globalAudio = audio;  // simpan ke global biar bisa diakses MusicPlayer
+    window.globalAudio = audio;  // simpan ke global biar bisa diakses MusicPlayer
     onOpen();
   };
 

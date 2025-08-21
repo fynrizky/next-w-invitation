@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 function getTimeRemaining(targetDate: Date) {
   const total = targetDate.getTime() - new Date().getTime();
@@ -11,7 +11,7 @@ function getTimeRemaining(targetDate: Date) {
 }
 // pages/EventSection.tsx
 export default function EventSection() {
-const targetDate = new Date("2025-12-20T08:00:00");
+const targetDate = useMemo(() => new Date('2025-12-20'), []);
 const [timeLeft, setTimeLeft] = useState(getTimeRemaining(targetDate));
 
   useEffect(() => {
