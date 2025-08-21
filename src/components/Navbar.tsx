@@ -12,19 +12,15 @@ const menuItems = [
 
 export default function Navbar() {
   const [activeId, setActiveId] = useState("home");
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
+          if (entry.isIntersecting) setActiveId(entry.target.id);
         });
       },
-      {
-        rootMargin: "-50% 0px -40% 0px",
-        threshold: 0.3,
-      }
+      { rootMargin: "-50% 0px -40% 0px", threshold: 0.3 }
     );
 
     menuItems.forEach((item) => {
@@ -36,15 +32,21 @@ export default function Navbar() {
   }, []);
 
   return (
-    <div className="fixed bottom-0 w-full font-bahasaFont lg:w-1/4 md:w-1/2 z-10">
-      <nav className="rounded-t-xl w-full bg-black/90 flex  justify-around py-1 text-gray-700">
+    <div className="fixed bottom-0 mb-[-0.07rem] lg:mb-[0rem] w-full md:w-1/2 lg:w-1/4 font-bahasaFont z-10">
+      <nav
+        className="rounded-t-xl w-full bg-black/90 flex justify-around py-1 text-gray-700"
+        role="navigation"
+      >
         {menuItems.map((item) => (
           <a
             key={item.label}
             href={item.href}
-            onClick={() => setActiveId(item.id)} 
+            aria-label={item.label}
+            onClick={() => setActiveId(item.id)}
             className={`flex flex-col items-center mt-1.5 text-[12px] transition ${
-              activeId === item.id ? "text-white" : "text-gray-400"
+              activeId === item.id
+                ? "text-white border-b-2 border-white-400"
+                : "text-gray-400"
             }`}
           >
             {item.icon}

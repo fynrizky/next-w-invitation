@@ -1,6 +1,7 @@
   'use client';
 
   import { useEffect, useState } from "react";
+  import Image from 'next/image';
   import Navbar from "@/components/Navbar";
   import Preloader from "@/components/Preloader";
   import OpeningScreen from "@/components/OpeningScreen";
@@ -10,6 +11,8 @@
   import LocationSection from "@/components/LocationSection";
   import PrayerSection from "@/components/PrayerSection";
   import Footer from "@/components/Footer";
+  import { weddingData } from "@/data/weddingData";
+import MusicPlayer from "@/components/MusicPlayer";
 
   export default function Home() {
     const [isLoading, setIsLoading] = useState(true);
@@ -18,7 +21,7 @@
     useEffect(() => {
       const timer = setTimeout(() => {
         setIsLoading(false);
-      }, 3000);
+      }, 5000);
       return () => clearTimeout(timer);
     }, []);
 
@@ -29,16 +32,25 @@
       <main className="relative min-h-screen w-full overflow-hidden">
       {/* Background kiri: tetap (fixed) */}
         <div
-          className="hidden lg:flex md:flex fixed top-0 left-0 md:w-1/2 lg:w-3/4 h-screen bg-cover bg-center z-0 items-center justify-center"
-          style={{ backgroundImage: "url('/assets/bgold.jpg')" }}
+          className="hidden md:flex fixed top-0 left-0 md:w-1/2 lg:w-3/4 h-screen z-0 items-center justify-center"
         >
           {/* Overlay gelap */}
-          <div className="w-full h-full bg-black/70 absolute top-0 left-0 z-0" />
+          <div className="absolute inset-0 -z-10">
+          <Image
+            src="/assets/bgold.jpg"
+            alt="Wedding background"
+            fill
+            priority   // langsung dimuat karena elemen penting
+            className="object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/70" /> {/* Overlay */}
+          </div>
 
+          {/* Gradasi overlay */}
           {/* Konten di atas background */}
           <div className="relative z-10 text-center font-bahasaFont text-zinc-300 px-6">
-            <h2 className=" text-5xl font-bold mb-2">Fulan & Pasangan</h2>
-            <p className="text-lg mb-4">Rabu, 20 Desember 2025</p>
+            <h2 className=" text-5xl font-bold mb-2">{weddingData.couple}</h2>
+            <p className="text-lg mb-4">{weddingData.date}</p>
 
             <a
               href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Fulan+%26+Pasangan+Wedding&dates=20251220T020000Z/20251220T040000Z&details=Undangan+pernikahan+Fulan+%26+Pasangan&location=Gedung+Pernikahan+XYZ"
@@ -59,12 +71,13 @@
         <div className="flex flex-col min-h-screen bg-white text-gray-800 md:ml-auto lg:ml-auto md:w-1/2 lg:w-1/4 z-10">
           <Navbar />
           <div className="flex flex-col justify-center flex-grow">
-            <HomeSection />
-            <CoupleSection />
-            <EventSection />
-            <LocationSection />
-            <PrayerSection />
+            <section id="home"><HomeSection /></section>
+            <section id="couple"><CoupleSection /></section>
+            <section id="event"><EventSection /></section>
+            <section id="location"><LocationSection /></section>
+            <section id="prayer"><PrayerSection /></section>
             <Footer />
+            <MusicPlayer/>
           </div>
         </div>
       </main>
