@@ -53,10 +53,10 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
   }, [progress, onFinish]);
 
   return (
-    <div
-      className={`h-screen w-full flex items-center justify-center bg-black text-white relative overflow-hidden font-bahasaFont transition-opacity duration-1000
-        ${isVisible && !isFadingOut ? "opacity-100" : "opacity-0"}`}
-    >
+      <div
+        className={`h-screen w-full flex items-center justify-center bg-black text-white relative overflow-hidden font-bahasaFont transition-opacity duration-1000 ease-linear
+          ${isVisible && !isFadingOut ? "opacity-100" : "opacity-0"}`}
+      >
       <div className="flex flex-col items-center gap-2 relative">
         {/* ===== ATAS: ICON + TITLE ===== */}
         <div className="flex flex-col items-center gap-2 relative">
