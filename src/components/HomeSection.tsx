@@ -31,6 +31,7 @@ export default function HomeSection() {
           backgroundSize: 'cover',
         }}
       >
+        
         <div
           className="backdrop-blur-[2px]"
           style={{
@@ -45,7 +46,8 @@ export default function HomeSection() {
                 src="/assets/bgold.jpg"
                 alt="Undangan Pernikahan"
                 fill
-                className="object-cover"
+                priority
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 rounded-full bg-black/40" />
             </div>

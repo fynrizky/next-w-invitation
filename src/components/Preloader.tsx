@@ -46,7 +46,7 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
         setIsFadingOut(true);
         setTimeout(() => {
           onFinish?.();
-        }, 1000); // durasi fade-out
+        }, 0); // durasi fade-out
       }, 1500); // tahan sebentar di 100%
       return () => clearTimeout(timer);
     }
@@ -54,7 +54,7 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
 
   return (
       <div
-        className={`h-screen w-full flex items-center justify-center bg-black text-white relative overflow-hidden font-bahasaFont transition-opacity duration-1000 ease-linear
+        className={`h-screen w-full flex items-center justify-center bg-black text-white relative overflow-hidden font-bahasaFont transition-opacity duration-700 ease-linear
           ${isVisible && !isFadingOut ? "opacity-100" : "opacity-0"}`}
       >
       <div className="flex flex-col items-center gap-2 relative">

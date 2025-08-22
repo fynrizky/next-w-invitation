@@ -15,6 +15,7 @@ export default function CoupleSection() {
               src="/assets/bgsleep.jpg"
               alt="Undangan Pernikahan"
               fill
+              priority
               className="object-cover rounded-full"
             />
           </div>
@@ -27,6 +28,7 @@ export default function CoupleSection() {
               src="/assets/bgnew.jpg"
               alt="Undangan Pernikahan"
               fill
+              priority
               className="object-cover rounded-full"
             />
           </div>

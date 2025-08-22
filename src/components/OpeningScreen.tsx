@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from "react";
 import { weddingData } from "@/data/weddingData";
+import Image from "next/image";
 
 type Props = { onOpen: () => void };
 
@@ -21,19 +22,29 @@ export default function OpeningScreen({ onOpen }: Props) {
 
     // fade-out dulu baru open
     setIsFading(true);
-    setTimeout(() => onOpen(), 1000); // harus sama dgn duration transition
+    setTimeout(() => onOpen(), 0); // harus sama dgn duration transition
   };
 
   return (
     <div
       className={`
-        relative h-screen bg-cover bg-center font-bahasaFont text-zinc-300
+        relative min-h-screen font-bahasaFont text-zinc-300
         flex items-center justify-center
-        transition-opacity duration-1000 ease-linear
+        transition-opacity duration-700 ease-linear
         ${isAppeared && !isFading ? "opacity-100" : "opacity-0"}
       `}
-      style={{ backgroundImage: "url('/assets/bg.jpg')" }}
+      
     >
+       {/* Overlay gradasi */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/assets/bg.jpg"
+          alt="Opening background"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+      </div>
       {/* Overlay gradasi */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-black/80 z-0" />
 
