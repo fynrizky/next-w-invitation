@@ -1,28 +1,29 @@
 'use client';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { weddingData } from "@/data/weddingData";
 
-type Props = { onOpen: () => void };
+type Props = {
+  onOpen: () => void;
+};
 
 export default function OpeningScreen({ onOpen }: Props) {
   const [isFading, setIsFading] = useState(false);
-  const [isAppeared, setIsAppeared] = useState(false); // fade-in saat mount
-
-  useEffect(() => {
-    const t = setTimeout(() => setIsAppeared(true), 30); // trigger transition
-    return () => clearTimeout(t);
-  }, []);
 
   const handleClick = () => {
-    const audio = new Audio('/music/liesandtruth.mp3');
-    audio.loop = true;
-    audio.play();
+    const audio = new Audio('/music/liesandtruth.mp3'); // file di public/
+    audio.loop = true;                     
+    audio.play();                          
+    // simpan ke global biar bisa diakses MusicPlayer
     // @ts-ignore
     window.globalAudio = audio;
 
-    // fade-out dulu baru open
+    // aktifkan animasi redup
     setIsFading(true);
-    setTimeout(() => onOpen(), 1000); // harus sama dgn duration transition
+
+    // tunggu 1 detik sesuai durasi transition, baru open
+    setTimeout(() => {
+      onOpen();
+    }, 1000);
   };
 
   return (
@@ -30,18 +31,21 @@ export default function OpeningScreen({ onOpen }: Props) {
       className={`
         relative h-screen bg-cover bg-center font-bahasaFont text-zinc-300
         flex items-center justify-center
-        transition-opacity duration-1000 ease-linear
-        ${isAppeared && !isFading ? "opacity-100" : "opacity-0"}
+        transition-opacity duration-1000
+        ${isFading ? "opacity-0" : "opacity-100"}
       `}
       style={{ backgroundImage: "url('/assets/bg.jpg')" }}
     >
-      {/* Overlay gradasi */}
+      {/* Gradasi overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-black/80 z-0" />
 
-      {/* Konten */}
+      {/* Konten utama */}
       <div className="relative z-10 text-center animate-fadeIn">
         <h1 className="text-4xl font-bold mb-2">{weddingData.couple}</h1>
-        <p className="mb-1" dangerouslySetInnerHTML={{ __html: weddingData.message }} />
+        <p
+          className="mb-1"
+          dangerouslySetInnerHTML={{ __html: weddingData.message }}
+        />
         <p className="mb-6">{weddingData.date}</p>
 
         <button
