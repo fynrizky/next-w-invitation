@@ -12,9 +12,16 @@ const bootLines = [
 export default function Preloader({ onFinish }: { onFinish?: () => void }) {
   const [progress, setProgress] = useState(0);
   const [currentLine, setCurrentLine] = useState(bootLines[0]);
-  const [isFading, setIsFading] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
-  // Naikkan progress
+  // === Fade-in ketika pertama kali muncul ===
+  useEffect(() => {
+    const showTimer = setTimeout(() => setIsVisible(true), 50); // delay dikit biar animasi jalan
+    return () => clearTimeout(showTimer);
+  }, []);
+
+  // === Naikkan progress ===
   useEffect(() => {
     const interval = setInterval(() => {
       setProgress((p) => {
@@ -32,11 +39,11 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
     return () => clearInterval(interval);
   }, []);
 
-  // Delay + Fade saat progress selesai
+  // === Delay + Fade-out setelah selesai ===
   useEffect(() => {
     if (progress === 100) {
       const timer = setTimeout(() => {
-        setIsFading(true);
+        setIsFadingOut(true);
         setTimeout(() => {
           onFinish?.();
         }, 1000); // durasi fade-out
@@ -47,9 +54,8 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
 
   return (
     <div
-      className={`h-screen w-full flex items-center justify-center bg-black text-white relative overflow-hidden font-bahasaFont transition-opacity duration-1000 ${
-        isFading ? "opacity-0" : "opacity-100"
-      }`}
+      className={`h-screen w-full flex items-center justify-center bg-black text-white relative overflow-hidden font-bahasaFont transition-opacity duration-1000
+        ${isVisible && !isFadingOut ? "opacity-100" : "opacity-0"}`}
     >
       <div className="flex flex-col items-center gap-2 relative">
         {/* ===== ATAS: ICON + TITLE ===== */}
