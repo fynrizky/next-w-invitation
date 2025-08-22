@@ -1,5 +1,4 @@
 'use client';
-import { useState } from "react";
 import { weddingData } from "@/data/weddingData";
 
 type Props = {
@@ -7,33 +6,18 @@ type Props = {
 };
 
 export default function OpeningScreen({ onOpen }: Props) {
-  const [isFading, setIsFading] = useState(false);
 
-  const handleClick = () => {
+    const handleClick = () => {
     const audio = new Audio('/music/liesandtruth.mp3'); // file di public/
-    audio.loop = true;                     
-    audio.play();                          
-    // simpan ke global biar bisa diakses MusicPlayer
-    // @ts-ignore
-    window.globalAudio = audio;
-
-    // aktifkan animasi redup
-    setIsFading(true);
-
-    // tunggu 1 detik sesuai durasi transition, baru open
-    setTimeout(() => {
-      onOpen();
-    }, 1000);
+    audio.loop = true;                     // biar muter terus
+    audio.play();                          // mulai musik
+    window.globalAudio = audio;  // simpan ke global biar bisa diakses MusicPlayer
+    onOpen();
   };
 
   return (
     <div
-      className={`
-        relative h-screen bg-cover bg-center font-bahasaFont text-zinc-300
-        flex items-center justify-center
-        transition-opacity duration-1000
-        ${isFading ? "opacity-0" : "opacity-100"}
-      `}
+      className="relative h-screen bg-cover bg-center font-bahasaFont text-zinc-300 flex items-center justify-center fade-in-dark"
       style={{ backgroundImage: "url('/assets/bg.jpg')" }}
     >
       {/* Gradasi overlay */}
@@ -42,10 +26,7 @@ export default function OpeningScreen({ onOpen }: Props) {
       {/* Konten utama */}
       <div className="relative z-10 text-center animate-fadeIn">
         <h1 className="text-4xl font-bold mb-2">{weddingData.couple}</h1>
-        <p
-          className="mb-1"
-          dangerouslySetInnerHTML={{ __html: weddingData.message }}
-        />
+        <p className="mb-1" dangerouslySetInnerHTML={{ __html: weddingData.message }} />
         <p className="mb-6">{weddingData.date}</p>
 
         <button
