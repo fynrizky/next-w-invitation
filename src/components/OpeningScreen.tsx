@@ -17,7 +17,7 @@ export default function OpeningScreen({ onOpen }: Props) {
 
   return (
     <div
-      className="relative h-screen bg-cover bg-center font-bahasaFont text-zinc-300 flex items-center justify-center"
+      className="relative h-screen bg-cover bg-center font-bahasaFont text-zinc-300 flex items-center justify-center fade-in-dark"
       style={{ backgroundImage: "url('/assets/bg.jpg')" }}
     >
       {/* Gradasi overlay */}
