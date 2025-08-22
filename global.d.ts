@@ -1,7 +1,3 @@
-export {}; // supaya dianggap module
-
-declare global {
-  interface Window {
-    globalAudio?: HTMLAudioElement;
-  }
+interface Window {
+  globalAudio?: HTMLAudioElement;
 }
