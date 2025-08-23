@@ -64,7 +64,7 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
         setTimeout(() => {
           setIsFadingOut(true);
           setTimeout(() => onFinish?.(), 1000);
-        }, 1000);
+        }, 1500);
       }
 
       return next;
