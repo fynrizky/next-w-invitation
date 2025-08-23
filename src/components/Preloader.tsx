@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 
 const bootLines = [
+  { percent: 0, text: "Start..." },
   { percent: 10, text: "Starting system..." },
   { percent: 30, text: "Loading assets..." },
   { percent: 50, text: "Initializing invitation..." },
