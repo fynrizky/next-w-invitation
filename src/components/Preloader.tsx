@@ -49,9 +49,8 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
       // update bootline sesuai milestone
       const lines = bootLines.filter((line) => line.percent <= percent);
       if (lines.length) setCurrentLine(lines[lines.length - 1]);
-
-
       // kalau semua asset sudah selesai
+
       if (loadedAssets === assets.length) {
         setTimeout(() => {
           setIsFadingOut(true);

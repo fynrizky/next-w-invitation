@@ -8,6 +8,13 @@ export default function Document() {
         <link rel="preconnect" href="https://fonts.googleapis.com"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"></link>
         <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"></link>
+         {/* Preload gambar statis (wajib ada di folder /public) */}
+        <link rel="preload" as="image" href="/assets/bg.jpg" />
+        <link rel="preload" as="image" href="/assets/bgnew.jpg" />
+        <link rel="preload" as="image" href="/assets/bgold.jpg" />
+        <link rel="preload" as="image" href="/assets/bgsleep.jpg" />
+         {/* Kalau ada musik statis juga bisa */}
+        <link rel="preload" as="audio" href="/music/liesandtruth.mp3" />
       </Head>
       <body className="antialiased">
         <Main />
