@@ -22,7 +22,7 @@ export default function HomeSection() {
     <section id="home" className="text-center font-bahasaFont text-zinc-300">
       <div
         ref={bgRef}
-        className="lg:block md:block bg-cover bg-center bg-no-repeat z-0"
+        className="lg:block md:block z-0"
         style={{
           backgroundImage: "url('/assets/bgold.jpg')",
           backgroundAttachment: 'scroll',
