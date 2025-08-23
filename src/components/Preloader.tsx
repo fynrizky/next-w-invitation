@@ -29,21 +29,11 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
 
   useEffect(() => {
     let loadedAssets = 0;
+    const targetProgressRef = { current: 0 }; // untuk smooth update
 
     function handleAssetLoad() {
       loadedAssets++;
-      const percent = Math.round((loadedAssets / assets.length) * 100);
-      setProgress(percent);
-
-      const lines = bootLines.filter((line) => line.percent <= percent);
-      if (lines.length) setCurrentLine(lines[lines.length - 1]);
-
-      if (loadedAssets === assets.length) {
-        setTimeout(() => {
-          setIsFadingOut(true);
-          setTimeout(() => onFinish?.(), 1000);
-        }, 1000);
-      }
+      targetProgressRef.current = Math.round((loadedAssets / assets.length) * 100);
     }
 
     assets.forEach((src) => {
@@ -59,6 +49,30 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
         img.onerror = handleAssetLoad;
       }
     });
+
+    const interval = setInterval(() => {
+      setProgress((p) => {
+        if (p < targetProgressRef.current) return p + 1;
+        if (p > targetProgressRef.current) return targetProgressRef.current;
+
+        // update bootline sesuai progress
+        const lines = bootLines.filter((line) => line.percent <= p);
+        if (lines.length) setCurrentLine(lines[lines.length - 1]);
+
+        // jika sudah 100%
+        if (p === 100) {
+          clearInterval(interval);
+          setTimeout(() => {
+            setIsFadingOut(true);
+            setTimeout(() => onFinish?.(), 1000);
+          }, 1000);
+        }
+
+        return p;
+      });
+    }, 20); // naik 1% tiap 20ms → smooth
+
+    return () => clearInterval(interval);
   }, [onFinish]);
 
   return (
@@ -67,10 +81,9 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
         ${isVisible && !isFadingOut ? "opacity-100" : "opacity-0"}`}
     >
       <div className="flex flex-col items-center gap-2 relative">
-        {/* ===== ICON & TITLE ===== */}
+        {/* ICON & TITLE */}
         <div className="flex flex-col items-center gap-2 relative">
           <div className="relative">
-            {/* LOVE ICON */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -84,8 +97,6 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
                      5.42 22 8.5c0 3.78-3.4 
                      6.86-8.55 11.54L12 21.35z" />
             </svg>
-
-            {/* SPARKLES */}
             <span className="sparkle sparkle-1">✦</span>
             <span className="sparkle sparkle-2">✧</span>
             <span className="sparkle sparkle-3">✩</span>
@@ -94,20 +105,18 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
           <p className="text-lg text-center">Wedding Invitation</p>
         </div>
 
-        {/* ===== PROGRESS BAR ===== */}
+        {/* PROGRESS BAR */}
         <div className="text-center w-72">
-          <p className="text-xs font-mono font-bold text-slate-400 mb-2">
-            {progress}%
-          </p>
+          <p className="text-xs font-mono font-bold text-slate-400 mb-2">{progress}%</p>
           <div className="w-2/3 mx-auto h-2 bg-slate-800 rounded overflow-hidden">
             <div
-              className="h-full bg-slate-500 transition-all duration-300"
+              className="h-full bg-slate-500 transition-all duration-100"
               style={{ width: `${progress}%` }}
             />
           </div>
         </div>
 
-        {/* ===== BOOTLINES ===== */}
+        {/* BOOTLINES */}
         {currentLine && (
           <p className="mt-[-4px] text-slate-400 font-mono animate-fadeIn text-[8px]">
             [ OK ] ({currentLine.percent}%) {currentLine.text}
@@ -115,8 +124,7 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
         )}
       </div>
 
-      {/* FOOTER */}
-      <footer className="absolute bottom-4 text-xs text-gray-400 flex items-center gap-2">
+        <footer className="absolute bottom-4 text-xs text-gray-400 flex items-center gap-2">
         <span>From</span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -160,6 +168,7 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
           to { opacity: 1; transform: translateY(0); }
         }
       `}</style>
+
     </div>
-  )
+  );
 }
