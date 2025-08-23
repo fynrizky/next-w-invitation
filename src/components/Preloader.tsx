@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import { useEffect, useState } from "react";
 
 const bootLines = [
@@ -9,59 +9,68 @@ const bootLines = [
   { percent: 100, text: "Finalizing setup..." },
 ];
 
+// === Daftar asset yang mau dipastikan preload ===
+const assets = [
+  "/assets/bgold.jpg",
+  "/assets/flower.png",
+  "/assets/couple.png",
+  "/assets/music.mp3",
+];
+
 export default function Preloader({ onFinish }: { onFinish?: () => void }) {
   const [progress, setProgress] = useState(0);
   const [currentLine, setCurrentLine] = useState(bootLines[0]);
   const [isFadingOut, setIsFadingOut] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
-  // === Fade-in ketika pertama kali muncul ===
+  // === Fade-in awal ===
   useEffect(() => {
-    const showTimer = setTimeout(() => setIsVisible(true), 50); // delay dikit biar animasi jalan
+    const showTimer = setTimeout(() => setIsVisible(true), 50);
     return () => clearTimeout(showTimer);
   }, []);
 
-  // === Naikkan progress ===
+  // === Preload asset & update progress ===
   useEffect(() => {
-    const interval = setInterval(() => {
-      setProgress((p) => {
-        if (p >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        const next = p + 1;
-        const foundLine = bootLines.find((line) => line.percent === next);
-        if (foundLine) setCurrentLine(foundLine);
-        return next;
-      });
-    }, 60);
+    let loadedAssets = 0;
 
-    return () => clearInterval(interval);
-  }, []);
+    assets.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+      img.onload = handleAssetLoad;
+      img.onerror = handleAssetLoad; // kalau error tetap dihitung, biar nggak nyangkut
+    });
 
-  // === Delay + Fade-out setelah selesai ===
-  useEffect(() => {
-    if (progress === 100) {
-      const timer = setTimeout(() => {
-        setIsFadingOut(true);
+    function handleAssetLoad() {
+      loadedAssets++;
+      const percent = Math.round((loadedAssets / assets.length) * 100);
+      setProgress(percent);
+
+      // update bootline sesuai milestone
+      const foundLine = bootLines.find((line) => line.percent <= percent);
+      if (foundLine) setCurrentLine(foundLine);
+
+      // kalau semua asset sudah selesai
+      if (loadedAssets === assets.length) {
         setTimeout(() => {
-          onFinish?.();
-        }, 0); // durasi fade-out
-      }, 1500); // tahan sebentar di 100%
-      return () => clearTimeout(timer);
+          setIsFadingOut(true);
+          setTimeout(() => {
+            onFinish?.();
+          }, 1000);
+        }, 1000); // tahan 1 detik biar user lihat 100%
+      }
     }
-  }, [progress, onFinish]);
+  }, [onFinish]);
 
   return (
-      <div
-        className={`h-screen w-full flex items-center justify-center bg-black text-white relative overflow-hidden font-bahasaFont transition-opacity duration-700 ease-linear
-          ${isVisible && !isFadingOut ? "opacity-100" : "opacity-0"}`}
-      >
+    <div
+      className={`h-screen w-full flex items-center justify-center bg-black text-white relative overflow-hidden font-bahasaFont transition-opacity duration-1000
+        ${isVisible && !isFadingOut ? "opacity-100" : "opacity-0"}`}
+    >
       <div className="flex flex-col items-center gap-2 relative">
-        {/* ===== ATAS: ICON + TITLE ===== */}
+        {/* ===== ICON & TITLE ===== */}
         <div className="flex flex-col items-center gap-2 relative">
-          {/* LOVE ICON + sparkles */}
           <div className="relative">
+            {/* LOVE ICON */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -76,34 +85,29 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
                      6.86-8.55 11.54L12 21.35z" />
             </svg>
 
-            {/* Sparkles khusus di icon */}
+            {/* SPARKLES */}
             <span className="sparkle sparkle-1">✦</span>
             <span className="sparkle sparkle-2">✧</span>
             <span className="sparkle sparkle-3">✩</span>
             <span className="sparkle sparkle-4">✦</span>
           </div>
-
-          {/* TITLE */}
-          <div className="text-center">
-            <p className="text-lg">Wedding Invitation</p>
-          </div>
+          <p className="text-lg text-center">Wedding Invitation</p>
         </div>
 
-        {/* ===== TENGAH: PROGRESS BAR ===== */}
+        {/* ===== PROGRESS BAR ===== */}
         <div className="text-center w-72">
           <p className="text-xs font-mono font-bold text-slate-400 mb-2">
             {progress}%
           </p>
-
           <div className="w-2/3 mx-auto h-2 bg-slate-800 rounded overflow-hidden">
             <div
-              className="h-full bg-slate-500 transition-all duration-100"
+              className="h-full bg-slate-500 transition-all duration-300"
               style={{ width: `${progress}%` }}
             />
           </div>
         </div>
 
-        {/* ===== BAWAH: BOOTLINE LOG ===== */}
+        {/* ===== BOOTLINES ===== */}
         {currentLine && (
           <p className="mt-[-4px] text-slate-400 font-mono animate-fadeIn text-[8px]">
             [ OK ] ({currentLine.percent}%) {currentLine.text}
@@ -111,7 +115,7 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
         )}
       </div>
 
-      {/* ===== FOOTER KREDIT ===== */}
+      {/* FOOTER */}
       <footer className="absolute bottom-4 text-xs text-gray-400 flex items-center gap-2">
         <span>From</span>
         <svg
@@ -131,6 +135,7 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
         <span className="font-semibold text-white">fynrizky</span>
       </footer>
 
+      {/* Sparkle CSS */}
       <style jsx>{`
         .sparkle {
           position: absolute;
@@ -147,7 +152,6 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
           0%, 100% { opacity: 0; transform: scale(0.5) rotate(0deg); }
           50% { opacity: 1; transform: scale(1.3) rotate(20deg); }
         }
-
         .animate-fadeIn {
           animation: fadeIn 0.5s ease-in;
         }
