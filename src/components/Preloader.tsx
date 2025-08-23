@@ -15,7 +15,6 @@ const assets = [
   "/assets/bgnew.jpg",
   "/assets/bgold.jpg",
   "/assets/bgsleep.jpg",
-  "/assets/flower.png",
   "/music/liesandtruth.mp3",
 ];
 
@@ -48,8 +47,9 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
       setProgress(percent);
 
       // update bootline sesuai milestone
-      const foundLine = bootLines.find((line) => line.percent <= percent);
-      if (foundLine) setCurrentLine(foundLine);
+      const lines = bootLines.filter((line) => line.percent <= percent);
+      if (lines.length) setCurrentLine(lines[lines.length - 1]);
+
 
       // kalau semua asset sudah selesai
       if (loadedAssets === assets.length) {
