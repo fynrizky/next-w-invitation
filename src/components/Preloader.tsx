@@ -109,6 +109,32 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
           </p>
         )}
       </div>
+ 
+      <style jsx>{`
+        @keyframes fadeIn {
+          0% { opacity: 0; }
+          100% { opacity: 1; }
+        }
+        .animate-fadeIn {
+          animation: fadeIn 0.5s ease-in-out;
+        }
+        .sparkle {
+          position: absolute;
+          color: #ff69b4;
+          opacity: 0.8;
+          animation: sparkleAnim 2s infinite;
+        }
+        .sparkle-1 { top: -10px; left: -10px; animation-delay: 0s; }
+        .sparkle-2 { top: -10px; right: -10px; animation-delay: 0.5s; }
+        .sparkle-3 { bottom: -10px; left: -10px; animation-delay: 1s; }
+        .sparkle-4 { bottom: -10px; right: -10px; animation-delay: 1.5s; }
+
+        @keyframes sparkleAnim {
+          0%, 100% { transform: scale(1); opacity: 0.8; }
+          50% { transform: scale(1.5); opacity: 0.4; }
+        }
+      `}</style>
     </div>
   );
 }
+
