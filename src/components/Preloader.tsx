@@ -28,52 +28,52 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
   }, []);
 
   useEffect(() => {
-    let loadedAssets = 0;
-    const targetProgressRef = { current: 0 }; // untuk smooth update
+  let loadedAssets = 0;
+  const targetProgressRef = { current: 0 };
 
-    function handleAssetLoad() {
-      loadedAssets++;
-      targetProgressRef.current = Math.round((loadedAssets / assets.length) * 100);
+  function handleAssetLoad() {
+    loadedAssets++;
+    targetProgressRef.current = Math.round((loadedAssets / assets.length) * 100);
+  }
+
+  assets.forEach((src) => {
+    if (src.match(/\.(mp3|wav)$/)) {
+      const audio = new Audio();
+      audio.src = src;
+      audio.onloadeddata = handleAssetLoad;
+      audio.onerror = handleAssetLoad;
+    } else {
+      const img = new Image();
+      img.src = src;
+      img.onload = handleAssetLoad;
+      img.onerror = handleAssetLoad;
     }
+  });
 
-    assets.forEach((src) => {
-      if (src.match(/\.(mp3|wav)$/)) {
-        const audio = new Audio();
-        audio.src = src;
-        audio.onloadeddata = handleAssetLoad;
-        audio.onerror = handleAssetLoad;
-      } else {
-        const img = new Image();
-        img.src = src;
-        img.onload = handleAssetLoad;
-        img.onerror = handleAssetLoad;
+  const interval = setInterval(() => {
+    setProgress((p) => {
+      const next = p < targetProgressRef.current ? p + 1 : p;
+
+      // ==== update bootline setiap frame ====
+      const lines = bootLines.filter((line) => line.percent <= next);
+      if (lines.length) setCurrentLine(lines[lines.length - 1]);
+
+      // jika sudah 100%, trigger fadeout
+      if (next === 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          setIsFadingOut(true);
+          setTimeout(() => onFinish?.(), 1000);
+        }, 1000);
       }
+
+      return next;
     });
+  }, 20);
 
-    const interval = setInterval(() => {
-      setProgress((p) => {
-        if (p < targetProgressRef.current) return p + 1;
-        if (p > targetProgressRef.current) return targetProgressRef.current;
+  return () => clearInterval(interval);
+}, [onFinish]);
 
-        // update bootline sesuai progress
-        const lines = bootLines.filter((line) => line.percent <= p);
-        if (lines.length) setCurrentLine(lines[lines.length - 1]);
-
-        // jika sudah 100%
-        if (p === 100) {
-          clearInterval(interval);
-          setTimeout(() => {
-            setIsFadingOut(true);
-            setTimeout(() => onFinish?.(), 1000);
-          }, 1000);
-        }
-
-        return p;
-      });
-    }, 20); // naik 1% tiap 20ms → smooth
-
-    return () => clearInterval(interval);
-  }, [onFinish]);
 
   return (
     <div
