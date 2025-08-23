@@ -11,10 +11,12 @@ const bootLines = [
 
 // === Daftar asset yang mau dipastikan preload ===
 const assets = [
+  "/assets/bg.jpg",
+  "/assets/bgnew.jpg",
   "/assets/bgold.jpg",
+  "/assets/bgsleep.jpg",
   "/assets/flower.png",
-  "/assets/couple.png",
-  "/assets/music.mp3",
+  "/music/liesandtruth.mp3",
 ];
 
 export default function Preloader({ onFinish }: { onFinish?: () => void }) {
