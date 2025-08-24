@@ -31,7 +31,7 @@ export default function MusicPlayer() {
       <button
         onClick={togglePlay}
         className={`
-          relative p-1 rounded-full 
+          relative p-2 rounded-full 
           bg-white/20 backdrop-blur-md border border-white/30 shadow-lg 
           hover:scale-105 transition-all 
           flex items-center justify-center
@@ -39,16 +39,15 @@ export default function MusicPlayer() {
       >
         {isPlaying ? (
           <>
-            <Music className="text-pink-500" size={15} />
+            <Music className="text-pink-500" size={10} />
             <span className="absolute -top-3 -right-2 flex gap-[2px]">
               <span className="w-[2px] h-3 bg-pink-300 animate-eq1 rounded-xs" />
               <span className="w-[2px] h-3 bg-pink-500 animate-eq2 rounded-xs" />
-              <span className="w-[2px] h-3 bg-pink-300 animate-eq3 rounded-xs" />
-              <span className="w-[2px] h-3 bg-pink-500 animate-eq4 rounded-xs" />
+              <span className="w-[2px] h-3 bg-pink-400 animate-eq3 rounded-xs" />
             </span>
           </>
         ) : (
-          <VolumeX className="text-gray-400" size={15} />
+          <VolumeX className="text-gray-400" size={10} />
         )}
       </button>
 
@@ -56,11 +55,9 @@ export default function MusicPlayer() {
         @keyframes eq1 { 0%,100%{height:4px;} 50%{height:8px;} }
         @keyframes eq2 { 0%,100%{height:8px;} 50%{height:4px;} }
         @keyframes eq3 { 0%,100%{height:4px;} 50%{height:8px;} }
-        @keyframes eq4 { 0%,100%{height:8px;} 50%{height:4px;} }
         .animate-eq1 { animation: eq1 0.8s infinite; }
         .animate-eq2 { animation: eq2 0.8s infinite; }
         .animate-eq3 { animation: eq3 0.8s infinite; }
-        .animate-eq4 { animation: eq4 0.8s infinite; }
       `}</style>
     </div>
   );
