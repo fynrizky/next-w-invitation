@@ -119,7 +119,7 @@ export default function Preloader({ onFinish }: { onFinish?: () => void }) {
         {/* BOOTLINES */}
         {currentLine && (
           <p className="mt-[-4px] text-slate-400 font-mono animate-fadeIn text-[8px]">
-            [ OK ] ({currentLine.percent}%) {currentLine.text}
+            ({currentLine.percent}%) {currentLine.text}
           </p>
         )}
       </div>
